@@ -1,0 +1,286 @@
+<!--Design by foolishdeveloper.com-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Bangalore House Price Predictions </title>
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  *{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+ html{
+  height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .1)), url('https://wallpapercave.com/wp/wp3049325.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  
+  
+ 
+ }
+
+body{
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-size: cover;
+  
+ 
+
+  
+}
+
+.content{
+  width: 330px;
+ 
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-top: 40px;
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+              3px 3px 7px rgba(147, 149, 151, 0.671);
+ 
+}
+
+
+.content .text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: rgb(247, 233, 233);
+}
+
+.content .field{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.field input{
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  color: #e0d2d2;
+  border: 1px solid rgba(255, 255, 255, 0.438);
+  border-radius: 8px;
+  background: rgba(105, 105, 105, 0);
+ 
+}
+
+
+.field input::placeholder{
+  color: #e0d2d2a6;
+}
+.field:nth-child(2){
+  margin-top: 20px;
+}
+
+.field span{
+  position: absolute;
+  width: 50px;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+
+
+button{
+  margin: 25px 0 0 0;
+  width: 100%;
+  height: 50px;
+  color: rgb(238, 226, 226);
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  border-radius: 8px;
+  background: rgba(105, 105, 105, 0);
+ margin-top: 40px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+ 
+}
+ 
+.content .or{
+  color: rgba(255, 255, 255, 0.733);
+  margin-top: 9px;
+}
+ 
+.icon-button{
+  margin-top: 15px;
+}
+.icon-button span{
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+   color: rgba(244, 247, 250, 0.795);
+ border-radius: 5px;
+  line-height: 30px;
+  background: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(10px);
+}
+.icon-button span.facebook{
+  margin-right: 17px;
+
+}
+button:hover,
+.icon-button span:hover{
+  background-color: #babecc8c;
+}
+
+.content .text1{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: rgb(247, 233, 233);
+}
+
+.content .text2{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: rgb(169, 166, 166);
+}
+
+.Location{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 76%;
+  border: 0;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.range {
+  --ticksThickness: 2px;
+  --ticksHeight: 30%;
+  --ticksColor: silver;
+  
+  display: inline-block;
+  background: silver;
+  background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
+  background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
+  background-position: 0 bottom;
+  position: relative;
+}
+
+
+/* min / max labels at the edges */
+.range::before, .range::after {
+  font: 12px monospace;
+  content: counter(x);
+  position: absolute;
+  bottom: -2ch;
+}
+
+.range::before {
+  counter-reset: x var(--min);
+  transform: translateX(-50%);
+}
+
+.range::after {
+  counter-reset: x var(--max);
+  right: 0;
+  transform: translateX(50%);
+}
+
+
+.range > input {
+  width: 300px;
+  margin: 0 -6px; /* Critical adjustment */
+}
+ 
+  </style>
+
+</head>
+<body>
+  
+ 
+<div class="content">
+ <div class="text">House Details</div>
+  <form action="/api/predict_home_price" method="post">
+
+    <div>
+      <select class="Location" name="location" id="uiLocations">
+      </select>
+    </div>
+    <h3>. . . . . </h3>
+    <div>
+      <select class="Location" name="area_type" aria-label="Default select example">
+        <option value="" disabled="disabled" selected="selected">Select Area Type</option>
+        <option value="Super built-up  Area">Super built-up  Area</option>
+        <option value="Built-up  Area">Built-up  Area</option>
+        <option value="Carpet  Area">Carpet  Area</option>
+        <option value="Plot  Area">Plot  Area</option>
+      </select>
+    </div>
+    <h3>. . . . . </h3>
+    <div class="form-check form-check-inline">
+      <label class="text1" for="inlineRadio1">Select Availability</label>
+      <input class="form-check-input" type="radio" name="availability" id="inlineRadio1" value=1>
+      <label class="form-check-label" for="inlineRadio1"><h class="text2">Yes</h></label>
+      <input class="form-check-input" type="radio" name="availability" id="inlineRadio2" value=0>
+      <label class="form-check-label" for="inlineRadio2"><h class="text2">No</h></label>
+    </div>
+    <h3>. . . . . </h3>
+    <div class="field">
+      <label class="text1" for="inlineRadio1">Area (sqft)</label>
+      <input type="text" class="text1" name="total_sqft" id="title" aria-describedby="emailHelp" placeholder="Enter total_sqft">
+     
+    </div>
+    <h3>. . . . . </h3>
+
+    <div>
+      <label for="customRange2" class="text1">BHK</label>
+      <div class="range" style="--step:1; --min:0; --max:10">
+        <input type="range" name="bhk" min="0" max="10" step="1">
+      </div>
+    </div>
+    
+    <div>
+      <label for="customRange2" class="text1">Balcony</label>
+      <div class="range" style="--step:1; --min:0; --max:4">
+        <input type="range" name="balcony" min="0" max="4" step="1">
+      </div>
+    </div>
+
+    <div>
+      <label for="customRange2" class="text1">Bath Room</label>
+      <div class="range" style="--step:1; --min:0; --max:10">
+        <input type="range" name="bath" min="0" max="10" step="1">
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-dark">Calculate Price</button>
+
+  </form>
+</div>
+
+</body>
+</html>
