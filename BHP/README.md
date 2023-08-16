@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Banglore House Price Prediction
 
 ![image](BHP.png)
