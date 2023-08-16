@@ -20,9 +20,9 @@ Model Building
 
 Model Deployment
 
-The model is deployed on a python flask server which has two endpoints '/get_location_names' and '/predict_home_price' for getting the location names that will be displayed on the website and for predicting the house price respectively. The flask server consumes a util file that has all the functions for loading the artifacts and performing the desired functions. 
+The model is deployed on a Python flask server which has two endpoints '/get_location_names' and '/predict_home_price' for getting the location names that will be displayed on the website and for predicting the house price respectively. The flask server consumes a util file that has all the functions for loading the artifacts and performing the desired functions. 
 
-The front end (website) for our model is built in HTML and CSS with a bit of js to display the location's names in a list on the website. The web page is hosted on an Nginx web server which routes the API calls to the python flask server to get the estimated price value.
+The front end (website) for our model is built in HTML and CSS with a few js to display the location's names in a list on the website. The web page is hosted on an Nginx web server which routes the API calls to the Python flask server to get the estimated price value.
 
 Model Working
 
@@ -32,15 +32,12 @@ Tools/Technology Used
 
 1. Python as our programming language 
 2. Numpy and Pandas for data cleaning
-3. Matplotlib and seaborn for data visualization
+3. Matplotlib and Seaborn for data visualization
 4. Sklearn for model building
-5. Jupyter notebook, visual studio code, and git bash as IDE
+5. Jupyter Notebook, visual studio code, and git Bash as IDE
 6. Python flask for model server
 7. nginx for a web server
 8. HTML/CSS/Javascript for UI
 
 Enjoyed doing this project and hope to do many more. 
-=======
-# ML_Projects
-For all the machine learning projects
->>>>>>> 0f1570d (Initial commit)
+
