@@ -1,5 +1,5 @@
 
-# Banglore House Price Prediction
+# Bangalore House Price Prediction
 
 ![image](BHP.png)
 
