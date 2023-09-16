@@ -4,7 +4,8 @@
 ![image](BHP.png)
 
 
-This is my first end-to-end Machine Learning Project which predicts the price of a house in Bangalore based on many features like location, rooms, area, availability, BHK, balcony, and bathroom with an accuracy of over 85%. The project pipeline is as fallow-
+Build an end-to-end Machine Learning Project to predict the price of a house in Bengaluru using Linear Regression by identifying factors that have a significant influence on the price like Location, Size, and no. Bedroom/Bathroom/Balcony and availability with an R2 value of 84%.Build an end-to-end Machine Learning Project to predict the price of a house in Bengaluru using Linear Regression by identifying factors that have a significant influence on the price like Location, Size, and no. Bedroom/Bathroom/Balcony and availability with an R2 value of 84%.
+Skills: Exploratory Data Analysis · Seaborn · Predictive Analytics · Predictive Modeling · Flask · Amazon Web Services (AWS) · Data Analysis · Python (Programming Language) · Data Structures · Pandas (Software) · Matplotlib · NumPy · Data Science · Machine Learning
 
 Model Building
 
